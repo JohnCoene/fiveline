@@ -1,0 +1,17 @@
+Package: fiveline
+Type: Package
+Title: five-line.org API wrapper
+Version: 0.1.0
+Authors@R: c(
+    person("John", "Coene", , "jcoenep@gmail.com", role = c("aut", "cre")))
+Maintainer: John Coene <jcoenep@gmail.com>
+Description: five-line let's you fetch limericks from five-line.org
+    to let you include limericks in your Rmarkdown reports and shiny apps.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Imports:
+    jsonlite,
+    httr,
+    methods
+RoxygenNote: 6.0.1
