@@ -1,7 +1,7 @@
 
 # save token
 save_token <- function(x){
-  save(x, file = ".fivelineToken")
+  assign("credentials", x, envir = cred_env)
 }
 
 # parse credentials
@@ -11,20 +11,17 @@ parse_cred <- function(cred){
 
 # fetch creds
 fetch_credentials <- function(){
+
   credentials <- tryCatch(get("credentials", envir = cred_env),
                           error = function(e) e)
 
-  file = ".fivelineToken"
-
-  # check if file exists
-  if (is(credentials, "error") && file.exists(file)){
-    credentials <- get(load(file))
-    assign("credentials", credentials, envir = cred_env)
-  } else if (is(credentials, "error")){
-    stop("No credentials see ?lim_auth", call. = FALSE)
+  # check if cred exist
+  if (is(credentials, "error")){
+    stop("No credentials see ?fl_auth", call. = FALSE)
   }
 
   credentials <- parse_cred(credentials) # parse
+
   return(credentials)
 }
 
@@ -32,7 +29,7 @@ fetch_credentials <- function(){
 api_call <- function(call){
 
   uri <- getOption("base_url") # get base url
-  uri <- paste0(call, "categories") # build url
+  uri <- paste0(uri, call) # build url
 
   TK <- fetch_credentials() # get token
 
@@ -42,7 +39,9 @@ api_call <- function(call){
 
   # parse
   list <- httr::content(resp)
-  df <- do.call("rbind.data.frame", lapply(list, as.data.frame))
+  df <- plyr::rbind.fill(lapply(list, function(f) {
+    as.data.frame(Filter(Negate(is.null), f))
+    }))
 
   return(df)
 }

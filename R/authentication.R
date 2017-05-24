@@ -4,10 +4,12 @@
 #'
 #' @param username your username, see details.
 #' @param password your password, see details.
+#' @param verbose boolean if you want feedback on call.
 #'
 #' @details \code{username} and \code{password} can be obtained by visiting
 #'     \href{http://www.five-line.org}{five-line} and creating an account.
 #'     Then simply use your username and password in this function.
+#'     Tokens are valid for 30 minutes.
 #'
 #' @examples
 #' \dontrun{
@@ -19,7 +21,7 @@
 #' @importFrom methods is
 #'
 #' @seealso \href{http://www.five-line.org}{five-line}
-lim_auth <- function(username, password) {
+fl_auth <- function(username, password, verbose = FALSE) {
 
   if(missing(username) || missing(password)) stop("Username and password required")
 
@@ -32,7 +34,7 @@ lim_auth <- function(username, password) {
 
   httr::stop_for_status(TK)
 
-  print("Authentication successful!")
+  if(verbose == TRUE) print("Authentication successful!")
 
   save_token(TK)
 

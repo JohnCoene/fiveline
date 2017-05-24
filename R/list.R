@@ -1,37 +1,40 @@
-#' Get categories
+#' List views
 #'
-#' @description Fetch categories of limericks available.
+#' @description List categories, authors or limericks of limericks available.
 #'
+#' @examples
+#' \dontrun{
+#' categories <- list_cat()
+#' authors <- list_aut()
+#' limericks <- list_lim()
+#' }
+#'
+#' @name list_view
+NULL
+
+#' @rdname list_view
 #' @export
-lim_category <- function(){
+list_cat <- function(){
 
   resp <- api_call(call = "categories")
 
   return(resp)
 }
 
-#' Get authors
-#'
-#' @description Fetch categories of limericks available.
-#'
+#' @rdname list_view
 #' @export
-lim_authors <- function(){
+list_aut <- function(){
 
   resp <- api_call(call = "authors")
 
   return(resp)
 }
 
-#' Get limericks
-#'
-#' @description Fetch list of limericks available.
-#'
+#' @rdname list_view
 #' @export
-lim_list <- function(){
+list_lim <- function(){
 
   resp <- api_call(call = "limericks")
 
   return(resp)
-
-  return(df)
 }
