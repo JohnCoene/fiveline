@@ -1,4 +1,5 @@
 [![Travis-CI Build Status](https://travis-ci.org/JohnCoene/fiveline.svg?branch=master)](https://travis-ci.org/JohnCoene/fiveline)
+[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/fiveline)](https://cran.r-project.org/package=fiveline)
 
 # fiveline
 
@@ -6,7 +7,7 @@
 
 fiveline is an R integration of the [five-line](http://www.five-line.org/) API.
 
-[five-line](http://www.five-line.org/) collects the bawdiest and smutiest limericks out there; this package lets you easily include limericks in your Rmarkdown package or Shiny apps, because why not?
+[five-line](http://www.five-line.org/) collects the bawdiest and smutiest limericks out there; this package lets you easily include them in your Rmarkdown package or Shiny apps, because why not?
 
 ## Installation
 
