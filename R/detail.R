@@ -39,7 +39,6 @@ get_aut <- function(id){
 get_lim <- function(id){
   c <- paste0("limericks/", id)
   resp <- api_call(call = c)
-  class(resp) <- "limerick"
   return(resp)
 }
 
