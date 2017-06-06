@@ -38,6 +38,7 @@ insert_lim(lim) # insert in Rmarkdown
 ```
 
 ##### A bather
+
 A bather whose clothing was strewed
 By winds that left her quite nude,
 Saw a man come along
