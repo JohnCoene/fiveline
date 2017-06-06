@@ -18,6 +18,11 @@ You can install fiveline from github with:
 devtools::install_github("JohnCoene/fiveline")
 ```
 
+## Documentation
+
+* [API documentation](http://www.five-line.org/api/docs/)
+* [Package documentation](http://john-coene.com/five-line)
+
 ## Authentication
 
 Simply visit [five-line](http://www.five-line.org/) and create an account then use your credentials in `fl_auth`, see example below.
@@ -28,5 +33,13 @@ Simply visit [five-line](http://www.five-line.org/) and create an account then u
 fl_auth("username", "password") # authenticate
 categories <- list_cat() # get all categories
 cat <- get_cat(categories$id[1]) # get limericks in first category
-lim <- get_lim(cat$id[1]) # get limerick
+lim <- get_lim(sample(cat$id, 1)) # get random limerick from category
+insert_lim(lim) # insert in Rmarkdown
 ```
+
+##### A bather
+A bather whose clothing was strewed
+By winds that left her quite nude,
+Saw a man come along
+And unless I am wrong,
+You expect this line to be lewd.
