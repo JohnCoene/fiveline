@@ -39,8 +39,8 @@ insert_lim(lim) # insert in Rmarkdown
 
 ##### A bather
 
-A bather whose clothing was strewed
-By winds that left her quite nude,
-Saw a man come along
-And unless I am wrong,
-You expect this line to be lewd.
+> A bather whose clothing was strewed
+> By winds that left her quite nude,
+> Saw a man come along
+> And unless I am wrong,
+> You expect this line to be lewd.
